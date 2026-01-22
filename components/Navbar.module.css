@@ -1,0 +1,341 @@
+.container {
+    display: flex;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.95);
+    padding: 1rem 1.5rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+    position: relative;
+    z-index: 1000;
+}
+
+/* Menu Desktop */
+.linkSection {
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+}
+
+.navLink {
+    font-size: 1.6rem;
+    letter-spacing: 0.1rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: white;
+    text-align: center;
+}
+
+.navLink:hover {
+    color: #FE6806;
+}
+
+.clubWrapper {
+    position: relative;
+}
+
+.clubButton {
+    appearance: none;
+    -webkit-appearance: none;
+    background: none;
+    border: none;
+    padding: 0;
+    margin: 0;
+    
+    cursor: pointer;
+    color: white;
+    font-size: 1.6rem;
+    font-weight: bold;
+    letter-spacing: 0.1rem;
+    text-transform: uppercase;
+    font-family: inherit;
+    line-height: normal;
+}
+
+.clubButton::after {
+    content: " ▾";
+    font-size: 0.9em;
+}
+
+.ecoleWrapper {
+    position: relative;
+}
+
+
+
+.clubMenu {
+    position: absolute;
+    top: 100%;              
+    left: 0;
+    width: 100%;
+    background: #fe6906;
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+    padding: 1.5rem 0;
+    z-index: 999;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+}
+
+
+.clubMenu a {
+    padding: 0.6rem 1.2rem;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.95);
+    font-size: 1.6rem;
+    font-weight: bold;
+    letter-spacing: 0.1rem;
+    text-align: center;
+    border: 3px solid black;
+    border-radius: 7.5px;
+}
+
+.clubMenu a:hover {
+    color: #fe6906de;
+}
+
+.ecoleButton {
+    appearance: none;
+    -webkit-appearance: none;
+    background: none;
+    border: none;
+    padding: 0;
+    margin: 0;
+
+    cursor: pointer;
+    color: white;
+    font-size: 1.6rem;
+    font-weight: bold;
+    letter-spacing: 0.1rem;
+    text-transform: uppercase;
+    font-family: inherit;
+    line-height: normal;
+}
+
+.ecoleButton::after {
+    content: " ▾";
+    font-size: 0.9em;
+}
+
+.ecoleMenu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: #fe6906;
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+    padding: 1.5rem 0;
+    z-index: 999;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+}
+
+.ecoleMenu a {
+    padding: 0.6rem 1.2rem;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.95);
+    font-size: 1.6rem;
+    font-weight: bold;
+    letter-spacing: 0.1rem;
+    text-align: center;
+    border: 3px solid black;
+    border-radius: 7.5px;
+}
+
+.ecoleMenu a:hover {
+    color: #FE6806;
+}
+
+/* Menu Mobile / Tablette */
+
+.mobileActions {
+    display: none;
+    align-items: center;
+    margin-left: auto;
+}
+
+.overlay {
+    position: fixed;
+    top: 100px;            
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 998;
+}
+
+.clubNameFull,
+.clubNameShort {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    color: white;
+    font-weight: 600;
+    letter-spacing: 0.08rem;
+    text-transform: uppercase;
+    white-space: nowrap;
+    display: none;
+    pointer-events: none; 
+}
+
+.iconsContainer {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.homeIcon {
+    display: flex;
+    align-items: center;
+}
+
+.homeMask {
+    width: 41px;
+    height: 41px;
+    background-color: #FE6806;
+    mask-image: url("/icons/home.svg");
+    -webkit-mask-image: url("/icons/home.svg");
+    mask-repeat: no-repeat;
+    -webkit-mask-repeat: no-repeat;
+    mask-size: contain;
+    -webkit-mask-size: contain;
+    mask-position: center;
+    -webkit-mask-position: center;
+}
+
+.burger {
+    display: none;
+    font-size: 2.5rem;
+    background: none;
+    border: none;
+    color: #FE6806;
+    cursor: pointer;
+}
+
+/* Menu Responsive */
+
+.mobileMenu {
+    background: black;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    z-index: 999;
+}
+
+.mobileMenu a {
+    padding: 1.5rem;
+    font-size: 1.6rem;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: white;
+}
+
+.mobileItem {
+  width: 100%;
+}
+
+.mobileLink {
+  padding: 1.5rem;
+  font-size: 1.9rem;
+  text-transform: uppercase;
+  color: white;
+  text-align: center;     
+  cursor: pointer;
+}
+
+.mobileLink:hover {
+  color: #FE6806;
+}
+
+
+
+.mobileSubMenu {
+    display: flex;
+    flex-direction: column;
+    background: rgb(45, 45, 45);
+}
+
+.mobileMenu .mobileSubMenu a {
+  padding: 1.2rem;
+  font-size: 1.5rem;       
+  letter-spacing: 0.1rem;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: white;
+  text-align: center;
+}
+
+
+/* Laptop / Tablette */
+
+@media (max-width: 1200px) {
+    .linkSection {
+        display: none;
+    }
+
+    .mobileActions {
+        display: flex;
+    }
+
+    .clubNameFull {
+        display: inline;
+        font-size: 2rem;
+    }
+
+    .burger {
+        display: block;
+    }
+
+    .mobileMenu {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: black;
+        z-index: 999;
+    }
+}
+
+/* Tablette Verticale */
+
+@media (max-width: 768px) {
+    .clubNameFull {
+        font-size: 1.5rem;
+    }
+
+    .mobileMenu {
+        position: fixed;
+        top: 100px;        
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: black;
+        z-index: 999;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .mobileMenu a {
+        font-size: 2rem;
+    }
+}
+
+/* Mobile */
+
+@media (max-width: 480px) {
+    .clubNameFull {
+        display: none;
+    }
+
+    .clubNameShort {
+        display: inline;
+        font-size: 2rem;
+    }
+}
