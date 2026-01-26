@@ -164,7 +164,7 @@ export default function Navbar() {
 
             {clubOpen && (
                 <div className={Style.clubMenu}>
-                    <Link href="/club/staffs" onClick={() => setClubOpen(false)}>
+                    <Link href="/club/bénévoles" onClick={() => setClubOpen(false)}>
                         les bénévoles
                     </Link>
                     <Link href="/club/entraînements" onClick={() => setClubOpen(false)}>
@@ -178,13 +178,13 @@ export default function Navbar() {
 
             {ecoleOpen && (
                 <div className={Style.ecoleMenu}>
-                    <Link href="/ecole/categories" onClick={() => setEcoleOpen(false)}>
+                    <Link href="/ecole/valeurs" onClick={() => setEcoleOpen(false)}>
                         Les valeurs du club
                     </Link>
-                    <Link href="/ecole/educateurs" onClick={() => setEcoleOpen(false)}>
+                    <Link href="/ecole/sac" onClick={() => setEcoleOpen(false)}>
                         le sac de football
                     </Link>
-                    <Link href="/ecole/horaires" onClick={() => setEcoleOpen(false)}>
+                    <Link href="/ecole/lettre" onClick={() => setEcoleOpen(false)}>
                         lettre d'un enfant à un adulte
                     </Link>
                 </div>

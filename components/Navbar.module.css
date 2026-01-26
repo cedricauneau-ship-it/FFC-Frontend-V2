@@ -1,10 +1,11 @@
 .container {
     display: flex;
     align-items: center;
-    background-color: rgba(0, 0, 0, 0.95);
+    background-color: #0b0b0bfa;
     padding: 1rem 1.5rem;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
-    position: relative;
+    position: sticky;
+    top: 0;
     z-index: 1000;
 }
 
@@ -12,9 +13,9 @@
 .linkSection {
     display: flex;
     flex: 1;
-    justify-content: center;
     align-items: center;
     gap: 3rem;
+    padding: 0 1.5rem;
 }
 
 .navLink {
@@ -69,10 +70,9 @@
     top: 100%;              
     left: 0;
     width: 100%;
-    background: #fe6906;
+    background: #F57C00;
     display: flex;
-    justify-content: center;
-    gap: 3rem;
+    justify-content: space-evenly;
     padding: 1.5rem 0;
     z-index: 999;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
@@ -84,17 +84,19 @@
     text-decoration: none;
     text-transform: uppercase;
     color: white;
-    background-color: rgba(0, 0, 0, 0.95);
+    background-color: #0b0b0bfa;
     font-size: 1.6rem;
     font-weight: bold;
     letter-spacing: 0.1rem;
     text-align: center;
     border: 3px solid black;
     border-radius: 7.5px;
+    transition: transform 0.5s ease;
 }
 
 .clubMenu a:hover {
-    color: #fe6906de;
+    transition: transform 0.5s ease;
+    transform: scale(1.1);
 }
 
 .ecoleButton {
@@ -125,10 +127,9 @@
     top: 100%;
     left: 0;
     width: 100%;
-    background: #fe6906;
+    background: #F57C00;
     display: flex;
-    justify-content: center;
-    gap: 3rem;
+    justify-content: space-evenly;
     padding: 1.5rem 0;
     z-index: 999;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
@@ -139,17 +140,19 @@
     text-decoration: none;
     text-transform: uppercase;
     color: white;
-    background-color: rgba(0, 0, 0, 0.95);
+    background-color: #0b0b0bfa;
     font-size: 1.6rem;
     font-weight: bold;
     letter-spacing: 0.1rem;
     text-align: center;
     border: 3px solid black;
     border-radius: 7.5px;
+    transition: transform 0.5s ease;
 }
 
 .ecoleMenu a:hover {
-    color: #FE6806;
+    transition: transform 0.5s ease;
+    transform: scale(1.1);
 }
 
 /* Menu Mobile / Tablette */

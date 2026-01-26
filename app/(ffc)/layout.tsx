@@ -1,14 +1,12 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
-export default function PortfolioLayout({ children }: Readonly<{ children: React.ReactNode }>) {
+export default function FFCLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="fr">
-      <body>
-        <header><Navbar /></header>
+      <>
+        <Navbar />
         <main>{children}</main>
-        <footer><Footer /></footer>
-      </body>
-    </html>
+        <Footer />
+      </>
   );
 }

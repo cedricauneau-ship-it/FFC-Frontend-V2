@@ -3,3 +3,89 @@
   padding: 0;
   margin: 0;
 }
+
+:root {
+  --navbar-height: 105px;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+h1 {
+  font-size: 2.5rem;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+h2 {
+  font-size: 1.8rem;
+  line-height: 3.5rem;
+}
+
+p {
+  font-size: 1.2rem;
+  line-height:1.8rem;
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+}
+
+section {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem 8.5rem;
+  background-color: #f8f8f8;
+}
+
+.sectionContainer {
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.95);
+  padding: 1.5rem;
+  border-radius: 14px;
+}
+
+.sectionCadreContainer {
+  width: 100%;
+  background-color: rgba(45, 45, 45, 0.9);
+  padding: 2rem;
+  border-radius: 12px;
+}
+
+.diviser {
+  width: 100%;
+  padding: 1rem;
+  background-color: #ffffff;
+}
+
+.sectionDiviser {
+  height: 3px;
+  width: 5%;
+  background-color: #f57c00;
+  margin: 1rem 0;
+}
+
+.actuImg {
+  border-radius: 15px;
+  border: 1px solid black;
+  object-fit: cover;
+}
+
+.btnPrimaire {
+  min-width: 200px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-align: center;
+  text-decoration: none;
+  color: black;
+  background-color: #f57c00;
+  padding: 1rem;
+  border-radius: 25px;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.btnPrimaire:hover {
+  transform: scale(1.15);
+  color: white;
+}

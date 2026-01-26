@@ -1,0 +1,90 @@
+/* Hero */
+.hero {
+    position: relative;
+    height: calc(100vh - var(--navbar-height));
+    min-height: 520px;
+    overflow: hidden;
+    color: #f5f5f5;
+}
+
+/* Slides */
+.slide {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    transition: opacity 1.5s ease-in-out;
+}
+
+.active {
+    opacity: 1;
+}
+
+/* Match */
+.gridMatch {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  background-color: rgba(45, 45, 45, 0.9);
+  gap: 2rem;
+  padding: 2rem;
+  border-radius: 12px;
+}
+
+.cardMatch {
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+/* Actualité */
+.actu1 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    text-align: center;
+    color: white;
+}
+
+.actu1Text p {
+    font-size: 1.6rem;
+    letter-spacing: 1rem;
+}
+
+/* Club */
+.clubContainer {
+    display: flex;
+    justify-content: space-around;
+    color: white;
+}
+
+.clubContainer h2 {
+    color: #F57C00;
+}
+
+.joueurText {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 44%;
+    padding: 0 0.5rem;
+}
+
+.verticalDiviser {
+    height: auto;
+    width: 4px;
+    background-color: #F57C00;
+}
+
+.benevoleText {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 44%;
+    padding: 0 0.5rem;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .hero {
+    height: 85vh;
+  }
+}
