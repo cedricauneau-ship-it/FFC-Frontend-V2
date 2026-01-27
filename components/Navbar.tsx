@@ -176,29 +176,33 @@ export default function Navbar() {
 
             {clubOpen && (
                 <div className={Style.clubMenu}>
-                    <Link href="/club/bénévoles" onClick={() => setClubOpen(false)}>
-                        les bénévoles
-                    </Link>
-                    <Link href="/club/entraînements" onClick={() => setClubOpen(false)}>
-                        entraînements
-                    </Link>
-                    <Link href="/club/terrains" onClick={() => setClubOpen(false)}>
-                        les terrains
-                    </Link>
+                    <div className={Style.lineBlack}>
+                        <Link href="/club/bénévoles" onClick={() => setClubOpen(false)}>
+                            les bénévoles
+                        </Link>
+                        <Link href="/club/entraînements" onClick={() => setClubOpen(false)}>
+                            entraînements
+                        </Link>
+                        <Link href="/club/terrains" onClick={() => setClubOpen(false)}>
+                            les terrains
+                        </Link>
+                    </div>
                 </div>
             )}
 
             {ecoleOpen && (
                 <div className={Style.ecoleMenu}>
-                    <Link href="/ecole/valeurs" onClick={() => setEcoleOpen(false)}>
-                        Les valeurs du club
-                    </Link>
-                    <Link href="/ecole/sac" onClick={() => setEcoleOpen(false)}>
-                        le sac de football
-                    </Link>
-                    <Link href="/ecole/lettre" onClick={() => setEcoleOpen(false)}>
-                        lettre d'un enfant à un adulte
-                    </Link>
+                    <div className={Style.lineBlack}>
+                        <Link href="/ecole/valeurs" onClick={() => setEcoleOpen(false)}>
+                            Les valeurs du club
+                        </Link>
+                        <Link href="/ecole/sac" onClick={() => setEcoleOpen(false)}>
+                            le sac de football
+                        </Link>
+                        <Link href="/ecole/lettre" onClick={() => setEcoleOpen(false)}>
+                            lettre d'un enfant à un adulte
+                        </Link>
+                    </div>
                 </div>
             )}
 
