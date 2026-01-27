@@ -1,7 +1,7 @@
 .container {
     display: flex;
     align-items: center;
-    background-color: #0b0b0bfa;
+    background-color: rgba(11, 11, 11, 0.98);
     padding: 1rem 1.5rem;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
     position: sticky;
@@ -84,7 +84,7 @@
     text-decoration: none;
     text-transform: uppercase;
     color: white;
-    background-color: #0b0b0bfa;
+    background-color: rgba(11, 11, 11, 0.98);
     font-size: 1.6rem;
     font-weight: bold;
     letter-spacing: 0.1rem;
@@ -140,7 +140,7 @@
     text-decoration: none;
     text-transform: uppercase;
     color: white;
-    background-color: #0b0b0bfa;
+    background-color: rgba(11, 11, 11, 0.98);
     font-size: 1.6rem;
     font-weight: bold;
     letter-spacing: 0.1rem;
