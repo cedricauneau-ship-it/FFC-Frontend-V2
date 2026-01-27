@@ -5,12 +5,12 @@ import { useEffect, useState } from "react";
 import styles from "./page.module.css";
 
 const heroImages = [
-  "/images/homeHero/U6-U7.jpg",
-  "/images/homeHero/U8-U9.jpg",
-  "/images/homeHero/U10-U11.jpg",
-  "/images/homeHero/U12-U13.jpg",
-  "/images/homeHero/V35.jpg",
-  "/images/homeHero/V45.jpg",
+  "/Images/homeHero/U6-U7.jpg",
+  "/Images/homeHero/U8-U9.jpg",
+  "/Images/homeHero/U10-U11.jpg",
+  "/Images/homeHero/U12-U13.jpg",
+  "/Images/homeHero/V35.jpg",
+  "/Images/homeHero/V45.jpg",
 ]
 
 const matchIds = [
@@ -91,7 +91,7 @@ export default function HomePage() {
           <div className="sectionCadreContainer">
             <div className={styles.actu1}>
               <Image
-                src="/images/actu/Loto.jpg"
+                src="/Images/actu/Loto.jpg"
                 alt="Affiche du loto"
                 width={400}
                 height={400}
