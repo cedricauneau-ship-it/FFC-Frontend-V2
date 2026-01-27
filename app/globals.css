@@ -89,3 +89,16 @@ section {
   transform: scale(1.15);
   color: white;
 }
+
+/* Résponsive */
+@media (max-width: 1024px) {
+  section {
+    padding: 1rem 4rem;
+  }
+}
+
+@media (max-width: 768px) {
+  section {
+    padding: 1rem 1.5rem;
+  }
+}

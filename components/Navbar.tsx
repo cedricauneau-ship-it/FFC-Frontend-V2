@@ -4,6 +4,7 @@ import Style from "./Navbar.module.css";
 import Image from "next/image";
 import Link from "next/link";
 
+import { usePathname } from "next/navigation";
 import { useState, useRef, useEffect } from "react";
 
 export default function Navbar() {
@@ -42,7 +43,7 @@ export default function Navbar() {
         document.removeEventListener("mousedown", handleClickOutside);
     }, []);
 
-
+    const pathname = usePathname();
     
     return (
         <nav className={Style.container}>
@@ -54,7 +55,18 @@ export default function Navbar() {
             />
 
             <div className={Style.linkSection}>
-                <Link href="/" className={Style.navLink}>accueil</Link>
+                <Link
+                    href="/"
+                    onClick={(e) => {
+                        if (pathname === "/") {
+                            e.preventDefault();
+                            window.scrollTo({ top: 0, behavior: "smooth" });
+                        }
+                    }}
+                    className={Style.navLink}
+                >
+                    accueil
+                </Link>
                 <div className={Style.clubWrapper} ref={clubRef}>
                     <button
                         className={`${Style.navLink} ${Style.clubButton}`}

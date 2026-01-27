@@ -21,17 +21,18 @@
 
 /* Match */
 .gridMatch {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  background-color: rgba(45, 45, 45, 0.9);
-  gap: 2rem;
-  padding: 2rem;
-  border-radius: 12px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    background-color: rgba(45, 45, 45, 0.9);
+    gap: 2rem;
+    padding: 2rem;
+    border-radius: 12px;
 }
 
 .cardMatch {
-  border-radius: 12px;
-  overflow: hidden;
+    border-radius: 12px;
+    overflow: hidden;
+    min-height: 360px;
 }
 
 /* Actualité */
@@ -82,9 +83,47 @@
     padding: 0 0.5rem;
 }
 
-/* Mobile */
+/* Résponsive */
+@media (max-width: 1024px) {
+    .gridMatch {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
 @media (max-width: 768px) {
-  .hero {
-    height: 85vh;
-  }
+    .hero {
+        min-height: 380px;
+    }
+
+    .actu1 {
+        flex-direction: column;
+    }
+
+    .actu1 img {
+        width: 100%;
+        height: auto;
+    }
+
+    .clubContainer {
+        flex-direction: column;
+        gap: 3rem;
+        align-items: center;
+    }
+
+    .joueurText,
+    .benevoleText {
+        max-width: 100%;
+    }
+
+    .verticalDiviser {
+        width: 60%;
+        height: 3px;
+    }
+}
+
+@media (max-width: 640px) {
+    .gridMatch {
+        grid-template-columns: 1fr;
+        padding: 1.2rem;
+    }
 }
