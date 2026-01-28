@@ -93,7 +93,7 @@ export default function HomePage() {
           <div className="sectionCadreContainer">
             <div className={styles.actu1}>
               <Image
-                src="/images/actu/Loto.jpg"
+                src="/images/actu/loto.jpg"
                 alt="Affiche du loto"
                 width={400}
                 height={400}

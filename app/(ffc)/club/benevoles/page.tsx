@@ -6,25 +6,25 @@ import PersonCard from "@/components/PersonCard";
 export default function BenevolesPage() {
   const dirigeants = [
     {
-        img: "/images/dirigeant/Laurent.jpg",
+        img: "/images/dirigeant/laurent.jpg",
         role: "président",
         name: "schilt laurent",
         tel: "06 20 21 51 03",
     },
     {
-        img: "/images/dirigeant/Carlos.jpg",
+        img: "/images/dirigeant/carlos.jpg",
         role: "vice président",
         name: "tavares novo carlos",
         tel: "06 74 68 55 13",
     },
     {
-        img: "/images/dirigeant/Claude_jolly.jpg",
+        img: "/images/dirigeant/claude.jpg",
         role: "secretaire general",
         name: "jolly claude",
         tel: "06 32 46 90 68",
     },
     {
-        img: "/images/dirigeant/Jean_marc.jpg",
+        img: "/images/dirigeant/jean-marc.jpg",
         role: "trésorier",
         name: "moser jean marc",
         tel: "06 23 81 45 97",
@@ -36,25 +36,25 @@ export default function BenevolesPage() {
         tel: "06 72 86 23 29",
     },
     {
-        img: "/images/dirigeant/Guido.jpg",
+        img: "/images/dirigeant/guido.jpg",
         role: "organisation tournois",
         name: "barazzutti guido",
         tel: " ",
     },
     {
-        img: "/images/dirigeant/Jean_claude.jpg",
+        img: "/images/dirigeant/jean-claude.jpg",
         role: "membre du bureau",
         name: "fournier jean claude",
         tel: "",
     },
     {
-        img: "/images/dirigeant/Laurent_louis.jpg",
+        img: "/images/dirigeant/louis.jpg",
         role: "membre du bureau",
         name: "louis laurent",
         tel: "",
     },
     {
-        img: "/images/dirigeant/Sebastien.jpg",
+        img: "/images/dirigeant/sebastien.jpg",
         role: "membre du bureau",
         name: "fache sébastien",
         tel: "",
@@ -63,7 +63,7 @@ export default function BenevolesPage() {
 
   const educateurs = [
     {
-        img: "/images/dirigeant/Jean_marc.jpg",
+        img: "/images/dirigeant/jean-marc.jpg",
         role: "rt école de foot",
         name: "moser jean marc",
         tel: "06 23 81 45 97",
@@ -93,7 +93,7 @@ export default function BenevolesPage() {
         tel: "06 87 34 90 72",
     },
     {
-        img: "/images/dirigeant/Jean_marc.jpg",
+        img: "/images/dirigeant/jean-marc.jpg",
         role: "rt catégorie u13 féminine",
         name: "moser jean marc",
         tel: "06 23 81 45 97",

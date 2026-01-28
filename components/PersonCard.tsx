@@ -17,7 +17,7 @@ export default function PersonCard({
     tel,
 }: PersonCardProps) {
     
-  const hasImage = img && img !== "";
+  const hasImage = Boolean(img && img.length > 0);
 
   return (
     <div className={styles.card}>
