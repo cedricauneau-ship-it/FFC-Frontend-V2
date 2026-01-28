@@ -1,0 +1,15 @@
+.grid {
+  display: grid;
+  align-items: stretch;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: clamp(1.25rem, 3vw, 2.5rem);
+  padding: clamp(1rem, 3vw, 2rem);
+  border-radius: 12px;
+  background-color: rgba(45,45,45,0.9);
+}
+
+@media (max-width: 420px) {
+  .grid {
+    padding: 0rem;
+  }
+}

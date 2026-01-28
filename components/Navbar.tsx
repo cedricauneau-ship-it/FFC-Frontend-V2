@@ -23,27 +23,30 @@ export default function Navbar() {
 
     useEffect(() => {
         const handleClickOutside = (e: MouseEvent) => {
-            if (
-                clubRef.current &&
-                !clubRef.current.contains(e.target as Node)
-            ) {
-                setClubOpen(false);
+            if (clubRef.current && !clubRef.current.contains(e.target as Node)) {
+            setClubOpen(false);
             }
 
-            if (
-                ecoleRef.current &&
-                !ecoleRef.current.contains(e.target as Node)
-            ) {
-                setEcoleOpen(false);
+            if (ecoleRef.current && !ecoleRef.current.contains(e.target as Node)) {
+            setEcoleOpen(false);
             }
         };
 
-        document.addEventListener("mousedown", handleClickOutside);
+        document.addEventListener("click", handleClickOutside);
         return () =>
-        document.removeEventListener("mousedown", handleClickOutside);
+        document.removeEventListener("click", handleClickOutside);
     }, []);
 
     const pathname = usePathname();
+
+    {/* Navigue ou remets au début si déja sur la page */}
+    const handleNavClick = (href: string) => (e: React.MouseEvent) => {
+        if (pathname === href) {
+            e.preventDefault();
+            window.scrollTo({ top: 0, behavior: "smooth" });
+        }
+        setClubOpen(false);
+    };
     
     return (
         <nav className={Style.container}>
@@ -57,12 +60,7 @@ export default function Navbar() {
             <div className={Style.linkSection}>
                 <Link
                     href="/"
-                    onClick={(e) => {
-                        if (pathname === "/") {
-                            e.preventDefault();
-                            window.scrollTo({ top: 0, behavior: "smooth" });
-                        }
-                    }}
+                    onClick={ handleNavClick("/") }
                     className={Style.navLink}
                 >
                     accueil
@@ -177,7 +175,10 @@ export default function Navbar() {
             {clubOpen && (
                 <div className={Style.clubMenu}>
                     <div className={Style.lineBlack}>
-                        <Link href="/club/bénévoles" onClick={() => setClubOpen(false)}>
+                        <Link
+                            href="/club/benevoles"
+                            onClick={ handleNavClick("/club/benevoles") }
+                        >
                             les bénévoles
                         </Link>
                         <Link href="/club/entraînements" onClick={() => setClubOpen(false)}>

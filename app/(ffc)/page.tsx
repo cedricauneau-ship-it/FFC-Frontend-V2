@@ -1,16 +1,18 @@
 "use client";
 
-import Image from "next/image";
-import { useEffect, useState } from "react";
 import styles from "./page.module.css";
 
+import Image from "next/image";
+import { useEffect, useState } from "react";
+import Link from "next/link";
+
 const heroImages = [
-  "/Images/homeHero/U6-U7.jpg",
-  "/Images/homeHero/U8-U9.jpg",
-  "/Images/homeHero/U10-U11.jpg",
-  "/Images/homeHero/U12-U13.jpg",
-  "/Images/homeHero/V35.jpg",
-  "/Images/homeHero/V45.jpg",
+  "/images/homeHero/U6-U7.jpg",
+  "/images/homeHero/U8-U9.jpg",
+  "/images/homeHero/U10-U11.jpg",
+  "/images/homeHero/U12-U13.jpg",
+  "/images/homeHero/V35.jpg",
+  "/images/homeHero/V45.jpg",
 ]
 
 const matchIds = [
@@ -91,7 +93,7 @@ export default function HomePage() {
           <div className="sectionCadreContainer">
             <div className={styles.actu1}>
               <Image
-                src="/Images/actu/Loto.jpg"
+                src="/images/actu/Loto.jpg"
                 alt="Affiche du loto"
                 width={400}
                 height={400}
@@ -125,12 +127,9 @@ export default function HomePage() {
                   Vous avez envie de reprendre ou de pratiquer le sport dans une ambiance familiale et chaleureuse ?
                   Les éducateurs de chaque catégorie se feront un plaisir de répondre à toutes vos questions.
                 </p>
-                <a 
-                  href="mailto:auneau.dev@gmail.com?subject=Contact%20Bureau%20FFC"
-                  className="btnPrimaire" 
-                >
-                  Les éducateurs
-                </a>
+                <Link href="/club/benevoles#educateurs" className="btnPrimaire">
+                  les éducateurs
+                </Link>
               </div>
               <div className={styles.verticalDiviser}></div>
               <div className={styles.benevoleText}>  
@@ -138,10 +137,10 @@ export default function HomePage() {
                 <p>
                   Le bénévolat vous tente ?
                   Le club est toujours heureux d’accueillir de nouveaux bénévoles.
-                  Si l’aventure vous tente ou si vous souhaitez en savoir plus, n’hésitez pas à nous contacter !
+                  Si l’aventure vous interesse ou si vous souhaitez en savoir plus, n’hésitez pas à nous contacter !
                 </p>
                 <a 
-                  href="mailto:auneau.dev@gmail.com?subject=Contact%20Bureau%20FFC"
+                  href="mailto:auneau.dev@gmail.com?subject=Contact%20Bénévole%20Infos"
                   className="btnPrimaire" 
                 >
                   Nous contacter

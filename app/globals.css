@@ -1,7 +1,14 @@
 * {
-  box-sizing: border-box;
   padding: 0;
   margin: 0;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 :root {
@@ -40,8 +47,11 @@ section {
 
 .sectionContainer {
   width: 100%;
+  max-width: 1200px;
   background-color: rgba(0, 0, 0, 0.95);
   padding: 1.5rem;
+  padding-inline: auto;
+  margin-inline: auto;
   border-radius: 14px;
 }
 
@@ -90,6 +100,10 @@ section {
   color: white;
 }
 
+#educateurs {
+  scroll-margin-top: var(--navbar-height);
+}
+
 /* Résponsive */
 @media (max-width: 1024px) {
   section {
@@ -99,6 +113,6 @@ section {
 
 @media (max-width: 768px) {
   section {
-    padding: 1rem 1.5rem;
+    padding: 1rem 1rem;
   }
 }
