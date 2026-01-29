@@ -54,8 +54,6 @@ export default function HomePage() {
 
       </section>
 
-      <div className="diviser"></div>
-
       {/* Match */}
       <section>
 

@@ -138,7 +138,7 @@ export default function Navbar() {
                             {burgerClubOpen && (
                                 <div className={Style.mobileSubMenu}>
                                     <Link href="/club/benevoles" onClick={() => setOpen(false)}>les bénévoles</Link>
-                                    <Link href="/club/entraînements" onClick={() => setOpen(false)}>entraînements</Link>
+                                    <Link href="/club/entrainements" onClick={() => setOpen(false)}>entraînements</Link>
                                     <Link href="/club/terrains" onClick={() => setOpen(false)}>les terrains</Link>
                                 </div>
                             )}
@@ -181,7 +181,10 @@ export default function Navbar() {
                         >
                             les bénévoles
                         </Link>
-                        <Link href="/club/entraînements" onClick={() => setClubOpen(false)}>
+                        <Link 
+                            href="/club/entrainements" 
+                            onClick={ handleNavClick("/club/entrainements") }
+                        >
                             entraînements
                         </Link>
                         <Link href="/club/terrains" onClick={() => setClubOpen(false)}>

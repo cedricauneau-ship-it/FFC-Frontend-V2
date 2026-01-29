@@ -1,0 +1,75 @@
+.table {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+/* Ligne */
+.row {
+    display: grid;
+    grid-template-columns: 240px 1fr;
+    align-items: flex-start;
+
+    padding: 1rem 1.2rem;
+    border-radius: 12px;
+
+    background: rgba(255, 255, 255, 0.04);
+}
+
+/* Zebra */
+.row:nth-child(odd) {
+    background: rgba(255, 255, 255, 0.08);
+}
+
+/* Hover */
+.row:hover {
+    background: rgba(245, 124, 0, 0.12);
+}
+
+/* Colonne gauche : catégorie */
+.cellTitle {
+    font-size: 1.7rem;
+    font-weight: bold;
+    color: #f57c00;
+
+    text-align: center;
+    padding-right: 2rem;
+
+    line-height: 2.2rem;
+    padding-top: 0;
+    margin: 0;
+}
+
+/* Colonne droite : horaires */
+.cellContent {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.35rem;
+
+    color: white;
+    font-size: 1.5rem;
+
+    line-height: 2.2rem;
+    padding-top: 0;
+}
+
+/* Paragraphes horaires */
+.cellContent p {
+    font-size: 1.5rem;
+    margin: 0;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .row {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 0.4rem;
+    }
+
+    .cellTitle {
+        text-align: center;
+        padding-right: 0;
+    }
+}
