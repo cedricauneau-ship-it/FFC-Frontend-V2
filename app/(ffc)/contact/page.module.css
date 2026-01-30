@@ -1,0 +1,111 @@
+/* ===== CARTE PRINCIPALE ===== */
+.valueCard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2.5rem;
+
+  padding: 2.5rem;
+
+  background: rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(6px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 12px;
+}
+
+/* ===== INFOS ===== */
+.logoContainer {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3rem;
+  width: 100%;
+  max-width: 900px;
+}
+
+/* Carte info */
+.infoCard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.2rem;
+}
+
+/* Icône */
+.imageWrapper {
+  position: relative;
+  width: 110px;
+  height: 110px;
+
+  border-radius: 50%;
+  overflow: hidden;
+
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.image {
+  object-fit: contain;
+  padding: 18px;
+}
+
+/* Texte sous icône */
+.infoCard h3 {
+  font-size: clamp(1.15rem, 1.8vw, 1.4rem);
+  font-weight: 700;
+  color: white;
+  text-align: center;
+  line-height: 1.4;
+}
+
+/* ===== MAP ===== */
+.map {
+  width: 100%;
+  height: 380px;
+  border-radius: 12px;
+  border: 0;
+}
+
+/* ===== RESPONSIVE ===== */
+
+/* Tablette */
+@media (max-width: 1024px) {
+  .logoContainer {
+    gap: 2rem;
+  }
+
+  .imageWrapper {
+    width: 90px;
+    height: 90px;
+  }
+
+  .map {
+    height: 340px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .valueCard {
+    padding: 1.5rem;
+    gap: 2rem;
+  }
+
+  .logoContainer {
+    grid-template-columns: 1fr;
+    gap: 2.2rem;
+  }
+
+  .imageWrapper {
+    width: 80px;
+    height: 80px;
+  }
+
+  .infoCard h3 {
+    font-size: 1rem;
+  }
+
+  .map {
+    height: 300px;
+    border-radius: 10px;
+  }
+}

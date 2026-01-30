@@ -7,9 +7,9 @@ const BLUR_PLACEHOLDER =
 export default function LettrePage() {
   return (
     <>
-      <section id="valeurs">
+      <section id="lettre">
         <div className="sectionDiviser"></div>
-        <h1>Lettre d&apos;un enfant à un adulte</h1>
+        <h1>Lettre d'un enfant à un adulte</h1>
 
         <div className="sectionContainer">
           <div className="sectionCadreContainer">
