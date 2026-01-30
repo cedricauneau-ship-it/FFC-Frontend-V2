@@ -178,9 +178,9 @@ export default function Navbar() {
 
                             {burgerEcoleOpen && (
                                 <div className={Style.mobileSubMenu}>
-                                    <Link href="/ecole/categories" onClick={() => setOpen(false)}>Les valeurs du club</Link>
-                                    <Link href="/ecole/educateurs" onClick={() => setOpen(false)}>Le sac de football</Link>
-                                    <Link href="/ecole/horaires" onClick={() => setOpen(false)}>Lettre d'un enfant à un adulte</Link>
+                                    <Link href="/ecole_de_foot/valeurs" onClick={() => setOpen(false)}>Les valeurs du club</Link>
+                                    <Link href="/ecole_de_foot/sac" onClick={() => setOpen(false)}>Le sac de football</Link>
+                                    <Link href="/ecole_de_foot/lettre" onClick={() => setOpen(false)}>Lettre d'un enfant à un adulte</Link>
                                 </div>
                             )}
                             </div>
@@ -218,13 +218,22 @@ export default function Navbar() {
             {ecoleOpen && (
                 <div className={Style.ecoleMenu}>
                     <div className={Style.lineBlack}>
-                        <Link href="/ecole/valeurs" onClick={() => setEcoleOpen(false)}>
+                        <Link 
+                            href="/ecole_de_foot/valeurs" 
+                            onClick={ handleNavClick("/ecole_de_foot/valeurs") }
+                        >
                             Les valeurs du club
                         </Link>
-                        <Link href="/ecole/sac" onClick={() => setEcoleOpen(false)}>
+                        <Link 
+                            href="/ecole_de_foot/sac" 
+                            onClick={ handleNavClick("/ecole_de_foot/sac") }
+                        >
                             le sac de football
                         </Link>
-                        <Link href="/ecole/lettre" onClick={() => setEcoleOpen(false)}>
+                        <Link 
+                            href="/ecole_de_foot/lettre" 
+                            onClick={ handleNavClick("/ecole_de_foot/lettre") }
+                        >
                             lettre d'un enfant à un adulte
                         </Link>
                     </div>

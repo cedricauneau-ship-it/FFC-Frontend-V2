@@ -1,13 +1,12 @@
-
 import styles from "./page.module.css"
 
-export default function ValeursPage() {
+export default function LettrePage() {
   return (
     <>
-        <section id="valeurs">
+        <section id="lettre">
             
             <div className="sectionDiviser"></div>
-            <h1>Les valeurs du club</h1>
+            <h1>Lettre d'un enfant à un adulte</h1>
 
             <div className="sectionContainer">
                 <div className="sectionCadreContainer">
