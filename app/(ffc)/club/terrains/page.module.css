@@ -1,0 +1,117 @@
+/* ===== MAP ===== */
+.map {
+  width: 100%;
+  aspect-ratio: 21 / 9; /* 🔑 desktop : moins haut */
+  border-radius: 12px;
+  border: 0;
+  margin-bottom: 2rem;
+}
+
+/* ===== GRID DES TERRAINS ===== */
+.terrainsGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+/* ===== CARD TERRAIN ===== */
+.terrainCard {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  text-align: center;
+
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 12px;
+  padding: 1rem;
+}
+
+/* Titre terrain */
+.terrainCard h2 {
+  color: #f57c00;
+  text-transform: uppercase;
+}
+
+/* ===== IMAGE ===== */
+.imageWrapper {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border-radius: 12px;
+  overflow: hidden;
+
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.image {
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+/* Hover léger */
+.imageWrapper:hover .image {
+  transform: scale(1.05);
+}
+
+/* ===== OVERLAY PHOTO À VENIR ===== */
+.imageOverlay {
+  position: absolute;
+  inset: 0;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  background: linear-gradient(
+    135deg,
+    rgba(0, 0, 0, 0.45),
+    rgba(0, 0, 0, 0.25)
+  );
+
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-weight: 600;
+
+  pointer-events: none;
+}
+
+.overlayIcon {
+  font-size: 3rem;
+  opacity: 0.85;
+}
+
+.overlayText {
+  margin-top: 0.4rem;
+  font-size: 0.85rem;
+  opacity: 0.9;
+}
+
+/* ===== LÉGENDE ===== */
+.caption {
+  font-size: 0.85rem;
+  opacity: 0.65;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 1024px) {
+  .terrainsGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .map {
+    aspect-ratio: 16 / 9;
+  }
+}
+
+@media (max-width: 640px) {
+  .terrainsGrid {
+    grid-template-columns: 1fr;
+  }
+}

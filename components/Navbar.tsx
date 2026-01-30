@@ -74,8 +74,20 @@ export default function Navbar() {
                         club
                     </button>
                 </div>
-                <Link href="/resultats" className={Style.navLink}>résultats</Link>
-                <Link href="/classement" className={Style.navLink}>classement</Link>
+                <Link
+                    href="/calendrier"
+                    onClick={ handleNavClick("/calendrier") } 
+                    className={Style.navLink}
+                >
+                    calendrier
+                </Link>
+                <Link 
+                    href="/classement" 
+                    onClick={ handleNavClick("/classement") }
+                    className={Style.navLink}
+                >
+                    classement
+                </Link>
                 <div className={Style.ecoleWrapper} ref={ecoleRef}>
                     <button
                         className={`${Style.navLink} ${Style.ecoleButton}`}
@@ -85,7 +97,13 @@ export default function Navbar() {
                         école de foot
                     </button>
                 </div>
-                <Link href="/contact" className={Style.navLink}>contact</Link>
+                <Link 
+                    href="/contact" 
+                    onClick={ handleNavClick("/contact") }
+                    className={Style.navLink}
+                >
+                    contact
+                </Link>
             </div>
 
             <div className={Style.mobileActions}>
@@ -144,7 +162,7 @@ export default function Navbar() {
                             )}
                             </div>
 
-                        <Link href="/resultats" onClick={() => setOpen(false)}>résultats</Link>
+                        <Link href="/calendrier" onClick={() => setOpen(false)}>calendrier</Link>
                         <Link href="/classement" onClick={() => setOpen(false)}>classement</Link>
 
                         <div className={Style.mobileItem}>
@@ -187,7 +205,10 @@ export default function Navbar() {
                         >
                             entraînements
                         </Link>
-                        <Link href="/club/terrains" onClick={() => setClubOpen(false)}>
+                        <Link 
+                            href="/club/terrains" 
+                            onClick={ handleNavClick("/club/terrains") }
+                        >
                             les terrains
                         </Link>
                     </div>

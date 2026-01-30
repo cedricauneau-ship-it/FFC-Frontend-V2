@@ -1,0 +1,54 @@
+/* ===== WRAPPER ===== */
+.Wrapper {
+  position: relative;
+  width: 100%;
+  background: #1e1e1e;
+}
+
+/* Par défaut : iframe NON interactive */
+.Wrapper iframe {
+  pointer-events: none;
+}
+
+/* Après clic : iframe interactive */
+.active iframe {
+  pointer-events: auto;
+}
+
+/* ===== IFRAME ===== */
+.classement {
+  width: 100%;
+  min-height: 725px;
+  border: 0;
+  border-radius: 12px;
+}
+
+/* ===== TABLETTE ===== */
+@media (max-width: 1024px) {
+  .classement {
+    min-height: 725px;
+  }
+}
+
+/* ===== MOBILE : COMPORTEMENT IDENTIQUE À AVANT ===== */
+@media (max-width: 640px) {
+  /* On enlève le cadre visuel */
+  :global(.sectionCadreContainer) {
+    padding: 0;
+    border: none;
+    background: transparent;
+    box-shadow: none;
+  }
+
+  /* Padding écran minimal */
+  :global(.sectionContainer) {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+  }
+
+  /* Widget en pleine largeur */
+  .classement {
+    min-height: 710px;
+    border-radius: 0;
+  }
+}

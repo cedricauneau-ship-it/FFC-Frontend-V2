@@ -1,0 +1,26 @@
+.wrapper {
+  width: 100%;
+}
+
+/* Iframe par défaut : inactif */
+.iframe {
+  width: 100%;
+  min-height: 100px;
+  border: 0;
+  border-radius: 12px;
+
+  pointer-events: none; /* 🔑 empêche l’interaction */
+}
+
+/* Après clic : interactif */
+.active {
+  pointer-events: auto;
+}
+
+/* Mobile */
+@media (max-width: 640px) {
+  .iframe {
+    min-height: 1050px;
+    border-radius: 0;
+  }
+}
