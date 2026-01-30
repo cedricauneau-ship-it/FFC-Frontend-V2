@@ -17,7 +17,7 @@ export default function ValeursPage() {
             {/* IMAGE INTRO */}
             <div className={styles.imageWrapper}>
               <Image
-                src="/images/valeurs/11regles.jpg"
+                src="/images/ecole/11regles.jpg"
                 alt="Les valeurs du club"
                 fill
                 sizes="100vw"
