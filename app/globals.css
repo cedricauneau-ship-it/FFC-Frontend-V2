@@ -131,3 +131,9 @@ section {
     padding: 1rem 1rem;
   }
 }
+
+@media (max-width: 480px) {
+  .sectionCadreContainer {
+    padding: 2rem 0.5rem;
+  }
+}

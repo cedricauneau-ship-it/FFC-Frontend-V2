@@ -1,4 +1,3 @@
-/* ===== IMAGE INTRO ===== */
 .imageWrapper {
   position: relative;
   width: 100%;
@@ -45,7 +44,7 @@
 /* Texte */
 .valueCard p,
 .valueCard li {
-  font-size: clamp(0.95rem, 2.2vw, 1.1rem);
+  font-size: clamp(1.15rem, 2.2vw, 1.1rem);
   line-height: 1.7;
   color: white;
 }
@@ -79,7 +78,7 @@
 
 .conclusion p {
   margin: 0;
-  font-size: clamp(1.1rem, 2.8vw, 1.4rem);
+  font-size: clamp(1.2rem, 2.8vw, 1.4rem);
   font-weight: 700;
   color: white;
 }
