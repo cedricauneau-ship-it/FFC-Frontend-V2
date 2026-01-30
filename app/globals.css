@@ -84,6 +84,12 @@ section {
   margin: 1rem 0;
 }
 
+.titlediviser {
+  height: 3px;
+  width: 12.5%;
+  background-color: #F57C0F;
+}
+
 .actuImg {
   border-radius: 15px;
   border: 1px solid black;

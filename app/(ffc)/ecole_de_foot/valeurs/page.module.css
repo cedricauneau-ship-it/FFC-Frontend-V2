@@ -1,0 +1,102 @@
+/* ===== IMAGE INTRO ===== */
+.imageWrapper {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border-radius: 12px;
+  overflow: hidden;
+  margin-bottom: 2.5rem;
+
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.image {
+  object-fit: cover;
+}
+
+/* ===== TITRES ===== */
+.titleContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+/* ===== CARTE VALEUR ===== */
+.valueCard {
+  margin-bottom: 2.5rem;
+  padding: 2rem;
+
+  background: rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(6px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 12px;
+}
+
+/* Titres */
+.valueCard h2 {
+  color: #f57c00;
+  font-size: clamp(1.5rem, 3.6vw, 2rem);
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+/* Texte */
+.valueCard p,
+.valueCard li {
+  font-size: clamp(0.95rem, 2.2vw, 1.1rem);
+  line-height: 1.7;
+  color: white;
+}
+
+/* Listes */
+.valueCard ul {
+  margin-top: 1rem;
+  padding-left: 1.2rem;
+}
+
+.valueCard li {
+  margin-bottom: 0.6rem;
+}
+
+/* Mise en avant */
+.valueCard span {
+  color: #f57c00;
+  font-weight: 700;
+}
+
+/* ===== CONCLUSION ===== */
+.conclusion {
+  margin-top: 3rem;
+  padding: 2rem;
+  text-align: center;
+
+  background: rgba(245, 124, 0, 0.08);
+  border: 1px solid rgba(245, 124, 0, 0.25);
+  border-radius: 12px;
+}
+
+.conclusion p {
+  margin: 0;
+  font-size: clamp(1.1rem, 2.8vw, 1.4rem);
+  font-weight: 700;
+  color: white;
+}
+
+.conclusion span {
+  color: #f57c00;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+  .imageWrapper {
+    aspect-ratio: 4 / 3;
+    margin-bottom: 2rem;
+  }
+
+  .valueCard {
+    padding: 1.4rem;
+    margin-bottom: 2rem;
+  }
+}
