@@ -25,14 +25,13 @@ export default function HomePage() {
   useEffect(() => {
     const interval = setInterval(() => {
       setIndex((prev) => (prev + 1) % heroImages.length);
-    }, 4000);
+    }, 7500);
 
     return () => clearInterval(interval);
   }, []);
 
   return (
     <>
-      {/* hero */}
       <section className={styles.hero}>
 
         {heroImages.map((src, i) => (
@@ -53,6 +52,27 @@ export default function HomePage() {
         ))}
 
       </section>
+
+      {/* Actualité */}
+      <section>
+
+        <div className="sectionDiviser"></div>
+        <h1>La vie du club</h1>
+
+        <div className="sectionContainer">
+          <div className="sectionCadreContainer">
+            <iframe
+              src="https://widgets.sociablekit.com/facebook-page-posts/iframe/25649718" 
+              width="100%" 
+              height="1000px"
+            >
+            </iframe>
+          </div>    
+        </div>
+
+      </section>
+
+            <div className="diviser"></div>
 
       {/* Match */}
       <section>
@@ -77,35 +97,6 @@ export default function HomePage() {
             
           </div>
         </div>
-      </section>
-
-      <div className="diviser"></div>
-
-      {/* Actualité */}
-      <section>
-
-        <div className="sectionDiviser"></div>
-        <h1>La vie du club</h1>
-
-        <div className="sectionContainer">
-          <div className="sectionCadreContainer">
-            <div className={styles.actu1}>
-              <Image
-                src="/images/actu/loto.jpg"
-                alt="Affiche du loto"
-                width={400}
-                height={400}
-                className="actuImg"
-              />
-              <div className={styles.actu1Text}>
-                <p>🍀🍀🍀🍀🍀🍀🍀</p>
-                <h2>Rendez-vous le 28 mars 2026.</h2>
-                <h2>De nombreux lots à gagner !</h2>
-              </div>
-            </div>
-          </div>    
-        </div>
-
       </section>
 
       <div className="diviser"></div>
