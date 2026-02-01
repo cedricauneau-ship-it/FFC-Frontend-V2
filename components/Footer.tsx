@@ -28,8 +28,8 @@ export default function Footer() {
               <Image
                 src="/icons/Facebook.png"
                 alt="Logo Facebook"
-                width={70}
-                height={70}
+                width={60}
+                height={60}
                 className={Style.logoLink}
               />
             </a>  
@@ -42,8 +42,8 @@ export default function Footer() {
               <Image
                 src="/icons/Instagram.png"
                 alt="Logo Instagram"
-                width={70}
-                height={70}
+                width={60}
+                height={60}
                 className={Style.logoLink}
               />
             </a>  

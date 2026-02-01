@@ -242,6 +242,14 @@
 }
 
 @media (max-width: 480px) {
+  .mobileMenu a {
+    font-size: 1.4rem;
+  }
+
+  .mobileLink {
+    font-size: 1.4rem;
+  }
+
   .clubNameFull {
     display: none;
   }
