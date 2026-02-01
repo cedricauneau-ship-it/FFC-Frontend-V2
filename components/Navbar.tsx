@@ -1,245 +1,143 @@
-"use client"
+"use client";
 
 import Style from "./Navbar.module.css";
 import Image from "next/image";
 import Link from "next/link";
-
 import { usePathname } from "next/navigation";
-import { useState, useRef, useEffect } from "react";
+import { useState } from "react";
 
 export default function Navbar() {
-    {/* Etat du menu Burger */}
-    const [open, setOpen] = useState(false);
-    const [burgerClubOpen, setBurgerClubOpen] = useState(false);
-    const [burgerEcoleOpen, setBurgerEcoleOpen] = useState(false);
+  const pathname = usePathname();
 
+  const [open, setOpen] = useState(false);
+  const [burgerClubOpen, setBurgerClubOpen] = useState(false);
+  const [burgerEcoleOpen, setBurgerEcoleOpen] = useState(false);
 
-    {/* Etat des Modals */}
-    const [clubOpen, setClubOpen] = useState(false);
-    const clubRef = useRef<HTMLDivElement>(null);
+  const handleNavClick = (href: string) => (e: React.MouseEvent) => {
+    if (pathname === href) {
+      e.preventDefault();
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+    setOpen(false);
+    setBurgerClubOpen(false);
+    setBurgerEcoleOpen(false);
+  };
 
-    const [ecoleOpen, setEcoleOpen] = useState(false);
-    const ecoleRef = useRef<HTMLDivElement>(null);
+  return (
+    <nav className={Style.container}>
+      <Image src="/icons/LogoFFC.png" alt="Logo FFC" width={90} height={74} />
 
-    useEffect(() => {
-        const handleClickOutside = (e: MouseEvent) => {
-            if (clubRef.current && !clubRef.current.contains(e.target as Node)) {
-            setClubOpen(false);
-            }
+      <span className={Style.clubNameFull}>Fontenay Football Club</span>
+      <span className={Style.clubNameShort}>Fontenay FC</span>
 
-            if (ecoleRef.current && !ecoleRef.current.contains(e.target as Node)) {
-            setEcoleOpen(false);
-            }
-        };
+      {/* ===== DESKTOP ===== */}
+      <div className={Style.linkSection}>
+        <Link href="/" className={Style.navLink}>accueil</Link>
 
-        document.addEventListener("click", handleClickOutside);
-        return () =>
-        document.removeEventListener("click", handleClickOutside);
-    }, []);
+        <div className={Style.clubWrapper}>
+          <span className={`${Style.navLink} ${Style.hasSubmenu}`}>club</span>
+          <div className={Style.dropdownMenu}>
+            <Link href="/club/benevoles">les bénévoles</Link>
+            <Link href="/club/entrainements">entraînements</Link>
+            <Link href="/club/terrains">les terrains</Link>
+          </div>
+        </div>
 
-    const pathname = usePathname();
+        <Link href="/calendrier" className={Style.navLink}>calendrier</Link>
+        <Link href="/classement" className={Style.navLink}>classement</Link>
 
-    {/* Navigue ou remets au début si déja sur la page */}
-    const handleNavClick = (href: string) => (e: React.MouseEvent) => {
-        if (pathname === href) {
-            e.preventDefault();
-            window.scrollTo({ top: 0, behavior: "smooth" });
-        }
-        setClubOpen(false);
-    };
-    
-    return (
-        <nav className={Style.container}>
-            <Image
-             src="/icons/LogoFFC.png"
-             alt="Logo FFC"
-             width={90}
-             height={74}
-            />
+        <div className={Style.ecoleWrapper}>
+          <span className={`${Style.navLink} ${Style.hasSubmenu}`}>école de foot</span>
+          <div className={Style.dropdownMenu}>
+            <Link href="/ecole_de_foot/valeurs">les valeurs du club</Link>
+            <Link href="/ecole_de_foot/sac">le sac de football</Link>
+            <Link href="/ecole_de_foot/lettre">lettre d’un enfant</Link>
+          </div>
+        </div>
 
-            <div className={Style.linkSection}>
-                <Link
-                    href="/"
-                    onClick={ handleNavClick("/") }
-                    className={Style.navLink}
-                >
-                    accueil
-                </Link>
-                <div className={Style.clubWrapper} ref={clubRef}>
-                    <button
-                        className={`${Style.navLink} ${Style.clubButton}`}
-                        onClick={() => setClubOpen(!clubOpen)}
-                        aria-expanded={clubOpen}
-                    >
-                        club
-                    </button>
-                </div>
-                <Link
-                    href="/calendrier"
-                    onClick={ handleNavClick("/calendrier") } 
-                    className={Style.navLink}
-                >
-                    calendrier
-                </Link>
-                <Link 
-                    href="/classement" 
-                    onClick={ handleNavClick("/classement") }
-                    className={Style.navLink}
-                >
-                    classement
-                </Link>
-                <div className={Style.ecoleWrapper} ref={ecoleRef}>
-                    <button
-                        className={`${Style.navLink} ${Style.ecoleButton}`}
-                        onClick={() => setEcoleOpen(prev => !prev)}
-                        aria-expanded={ecoleOpen}
-                    >
-                        école de foot
-                    </button>
-                </div>
-                <Link 
-                    href="/contact" 
-                    onClick={ handleNavClick("/contact") }
-                    className={Style.navLink}
-                >
-                    contact
-                </Link>
+        <Link href="/contact" className={Style.navLink}>contact</Link>
+      </div>
+
+      {/* ===== MOBILE HEADER ===== */}
+      <div className={Style.mobileActions}>
+        <div className={Style.iconsContainer}>
+          <Link href="/" className={Style.homeIcon}>
+            <span className={Style.homeMask}></span>
+          </Link>
+
+          <button
+            className={Style.burger}
+            onClick={() => setOpen(!open)}
+            aria-label={open ? "Fermer le menu" : "Ouvrir le menu"}
+          >
+            {open ? "✕" : "☰"}
+          </button>
+        </div>
+      </div>
+
+      {/* ===== MOBILE MENU ===== */}
+      {open && (
+        <>
+          <div className={Style.overlay} onClick={() => setOpen(false)} />
+
+          <div className={Style.mobileMenu}>
+            <Link href="/" onClick={handleNavClick("/")}>accueil</Link>
+
+            <div className={Style.mobileItem}>
+              <div
+                className={Style.mobileLink}
+                onClick={() => {
+                  setBurgerClubOpen(true);
+                  setBurgerEcoleOpen(false);
+                }}
+              >
+                club ▾
+              </div>
             </div>
 
-            <div className={Style.mobileActions}>
-                <span className={Style.clubNameFull}>Fontenay Football Club</span>
-                <span className={Style.clubNameShort}>FFC</span>
+            <Link href="/calendrier" onClick={handleNavClick("/calendrier")}>calendrier</Link>
+            <Link href="/classement" onClick={handleNavClick("/classement")}>classement</Link>
 
-                <div className={Style.iconsContainer}>
-                    <Link href="/" className={Style.homeIcon}>
-                        <span className={Style.homeMask}></span>
-                    </Link>
-
-                    {/* Menu Burger */}
-                    <button
-                        className={Style.burger}
-                        onClick={() => setOpen(!open)}
-                        aria-label={open ? "Fermer le menu" : "Ouvrir le menu"}
-                        >
-                        {open ? "✕" : "☰"}
-                    </button>
-
-                </div>
+            <div className={Style.mobileItem}>
+              <div
+                className={Style.mobileLink}
+                onClick={() => {
+                  setBurgerEcoleOpen(true);
+                  setBurgerClubOpen(false);
+                }}
+              >
+                école de foot ▾
+              </div>
             </div>
 
-            {/* Menu responsive */}
-            {open && (
-                <>
-                    <div
-                        className={Style.overlay}
-                        onClick={() => {
-                            setOpen(false);
-                            setBurgerClubOpen(false);
-                            setBurgerEcoleOpen(false);
-                        }}
-                    />
+            <Link href="/contact" onClick={handleNavClick("/contact")}>contact</Link>
+          </div>
 
-                    <div className={Style.mobileMenu}>
-                        <Link href="/" onClick={() => setOpen(false)}>accueil</Link>
+          {/* ===== SOUS-MENU CLUB FULLSCREEN ===== */}
+          {burgerClubOpen && (
+            <div className={Style.mobileSubMenuFull}>
+              <div className={Style.mobileBack} onClick={() => setBurgerClubOpen(false)}>
+                ← retour
+              </div>
+              <Link href="/club/benevoles" onClick={handleNavClick("/club/benevoles")}>les bénévoles</Link>
+              <Link href="/club/entrainements" onClick={handleNavClick("/club/entrainements")}>entraînements</Link>
+              <Link href="/club/terrains" onClick={handleNavClick("/club/terrains")}>les terrains</Link>
+            </div>
+          )}
 
-                        <div className={Style.mobileItem}>
-                            <div
-                                className={Style.mobileLink}
-                                onClick={() => {
-                                setBurgerClubOpen(prev => !prev);
-                                setBurgerEcoleOpen(false);
-                                }}
-                            >
-                                club ▾
-                            </div>
-
-                            {burgerClubOpen && (
-                                <div className={Style.mobileSubMenu}>
-                                    <Link href="/club/benevoles" onClick={() => setOpen(false)}>les bénévoles</Link>
-                                    <Link href="/club/entrainements" onClick={() => setOpen(false)}>entraînements</Link>
-                                    <Link href="/club/terrains" onClick={() => setOpen(false)}>les terrains</Link>
-                                </div>
-                            )}
-                            </div>
-
-                        <Link href="/calendrier" onClick={() => setOpen(false)}>calendrier</Link>
-                        <Link href="/classement" onClick={() => setOpen(false)}>classement</Link>
-
-                        <div className={Style.mobileItem}>
-                            <div
-                                className={Style.mobileLink}
-                                onClick={() => {
-                                setBurgerEcoleOpen(prev => !prev);
-                                setBurgerClubOpen(false);
-                                }}
-                            >
-                                école de foot ▾
-                            </div>
-
-                            {burgerEcoleOpen && (
-                                <div className={Style.mobileSubMenu}>
-                                    <Link href="/ecole_de_foot/valeurs" onClick={() => setOpen(false)}>Les valeurs du club</Link>
-                                    <Link href="/ecole_de_foot/sac" onClick={() => setOpen(false)}>Le sac de football</Link>
-                                    <Link href="/ecole_de_foot/lettre" onClick={() => setOpen(false)}>Lettre d'un enfant à un adulte</Link>
-                                </div>
-                            )}
-                            </div>
-
-                        <Link href="/contact" onClick={() => setOpen(false)}>contact</Link>
-                    </div>
-                </>
-            )}
-
-            {clubOpen && (
-                <div className={Style.clubMenu}>
-                    <div className={Style.lineBlack}>
-                        <Link
-                            href="/club/benevoles"
-                            onClick={ handleNavClick("/club/benevoles") }
-                        >
-                            les bénévoles
-                        </Link>
-                        <Link 
-                            href="/club/entrainements" 
-                            onClick={ handleNavClick("/club/entrainements") }
-                        >
-                            entraînements
-                        </Link>
-                        <Link 
-                            href="/club/terrains" 
-                            onClick={ handleNavClick("/club/terrains") }
-                        >
-                            les terrains
-                        </Link>
-                    </div>
-                </div>
-            )}
-
-            {ecoleOpen && (
-                <div className={Style.ecoleMenu}>
-                    <div className={Style.lineBlack}>
-                        <Link 
-                            href="/ecole_de_foot/valeurs" 
-                            onClick={ handleNavClick("/ecole_de_foot/valeurs") }
-                        >
-                            Les valeurs du club
-                        </Link>
-                        <Link 
-                            href="/ecole_de_foot/sac" 
-                            onClick={ handleNavClick("/ecole_de_foot/sac") }
-                        >
-                            le sac de football
-                        </Link>
-                        <Link 
-                            href="/ecole_de_foot/lettre" 
-                            onClick={ handleNavClick("/ecole_de_foot/lettre") }
-                        >
-                            lettre d'un enfant à un adulte
-                        </Link>
-                    </div>
-                </div>
-            )}
-
-        </nav>
-    );
+          {/* ===== SOUS-MENU ECOLE FULLSCREEN ===== */}
+          {burgerEcoleOpen && (
+            <div className={Style.mobileSubMenuFull}>
+              <div className={Style.mobileBack} onClick={() => setBurgerEcoleOpen(false)}>
+                ← retour
+              </div>
+              <Link href="/ecole_de_foot/valeurs" onClick={handleNavClick("/ecole_de_foot/valeurs")}>les valeurs du club</Link>
+              <Link href="/ecole_de_foot/sac" onClick={handleNavClick("/ecole_de_foot/sac")}>le sac de football</Link>
+              <Link href="/ecole_de_foot/lettre" onClick={handleNavClick("/ecole_de_foot/lettre")}>lettre d’un enfant</Link>
+            </div>
+          )}
+        </>
+      )}
+    </nav>
+  );
 }

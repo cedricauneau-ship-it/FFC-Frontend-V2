@@ -1,342 +1,271 @@
 .container {
-    display: flex;
-    align-items: center;
-    background-color: rgba(11, 11, 11, 0.98);
-    padding: 1rem 1.5rem;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
-    position: sticky;
-    top: 0;
-    z-index: 1000;
+  display: flex;
+  align-items: center;
+  background-color: rgba(11, 11, 11, 0.98);
+  padding: 1rem 1.5rem;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 }
 
-/* Menu Desktop */
+/* ===== DESKTOP ===== */
+
 .linkSection {
-    display: flex;
-    flex: 1;
-    align-items: center;
-    gap: 3rem;
-    padding: 0 1.5rem;
+  display: flex;
+  flex: 1;
+  align-items: center;
+  gap: 3rem;
+  padding: 0 1.5rem;
 }
 
 .navLink {
-    font-size: 1.6rem;
-    letter-spacing: 0.1rem;
-    font-weight: bold;
-    text-transform: uppercase;
-    text-decoration: none;
-    color: white;
-    text-align: center;
+  font-size: 1.6rem;
+  letter-spacing: 0.1rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: white;
+  cursor: pointer;
 }
 
 .navLink:hover {
-    color: #FE6806;
+  color: #FE6806;
 }
 
-.clubWrapper {
-    position: relative;
-}
-
-.clubButton {
-    appearance: none;
-    -webkit-appearance: none;
-    background: none;
-    border: none;
-    padding: 0;
-    margin: 0;
-    
-    cursor: pointer;
-    color: white;
-    font-size: 1.6rem;
-    font-weight: bold;
-    letter-spacing: 0.1rem;
-    text-transform: uppercase;
-    font-family: inherit;
-    line-height: normal;
-}
-
-.clubButton::after {
-    content: " ▾";
-    font-size: 0.9em;
-}
-
+.clubWrapper,
 .ecoleWrapper {
-    position: relative;
+  position: relative;
 }
 
-.clubMenu {
-    position: absolute;
-    top: 100%;              
-    left: 0;
-    width: 100%;
-    background: #F57C00;
-    display: flex;
-    justify-content: space-evenly;
-    padding: 1.5rem 0;
-    z-index: 999;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
-}
-
-.lineBlack {
-    display: flex;
-    justify-content: space-evenly;
-    width: 100%;
-    background-color: rgba(11, 11, 11, 0.98);
-}
-
-.clubMenu a {
-    padding: 1rem 1.2rem;
-    text-decoration: none;
-    text-transform: uppercase;
-    color: white;
-    font-size: 1.5rem;
-    font-weight: bold;
-    letter-spacing: 0.1rem;
-    text-align: center;
-    transition: transform 0.5s ease;
-}
-
-.clubMenu a:hover {
-    color: #F57C00;
-}
-
-
-.ecoleButton {
-    appearance: none;
-    -webkit-appearance: none;
-    background: none;
-    border: none;
-    padding: 0;
-    margin: 0;
-
-    cursor: pointer;
-    color: white;
-    font-size: 1.6rem;
-    font-weight: bold;
-    letter-spacing: 0.1rem;
-    text-transform: uppercase;
-    font-family: inherit;
-    line-height: normal;
-}
-
-.ecoleButton::after {
-    content: " ▾";
-    font-size: 0.9em;
-}
-
-.ecoleMenu {
+/* zone tampon hover */
+@media (min-width: 1200px) {
+  .clubWrapper::after,
+  .ecoleWrapper::after {
+    content: "";
     position: absolute;
     top: 100%;
     left: 0;
     width: 100%;
-    background: #F57C00;
-    display: flex;
-    justify-content: space-evenly;
-    padding: 1.5rem 0;
-    z-index: 999;
+    height: 20px;
+  }
+}
+
+/* flèche */
+.hasSubmenu {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.hasSubmenu::after {
+  content: "❯";
+  transform: rotate(-90deg);
+  transition: transform 0.25s ease;
+}
+
+@media (min-width: 1200px) {
+  .clubWrapper:hover .hasSubmenu::after,
+  .ecoleWrapper:hover .hasSubmenu::after {
+    transform: rotate(90deg);
+  }
+
+  .dropdownMenu {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-10px);
+    min-width: 320px;
+    padding: 1.2rem 1.5rem;
+    background: #101010;
+    border-radius: 15px;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
-}
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.25s ease, transform 0.25s ease;
+    z-index: 1000;
+  }
 
-.ecoleMenu a {
-    padding: 0.6rem 1.2rem;
-    text-decoration: none;
-    text-transform: uppercase;
-    color: white;
-    background-color: rgba(11, 11, 11, 0.98);
-    font-size: 1.6rem;
-    font-weight: bold;
-    letter-spacing: 0.1rem;
+  .clubWrapper:hover .dropdownMenu,
+  .ecoleWrapper:hover .dropdownMenu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(0);
+  }
+
+  .dropdownMenu a {
+    display: block;
+    padding: 1.2rem;
+    white-space: nowrap;
     text-align: center;
-    transition: transform 0.5s ease;
+    color: white;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-size: 1.4rem;
+    font-weight: 600;
+  }
+
+  .dropdownMenu a:hover {
+    background-color: #FE6806;
+    color: black;
+  }
 }
 
-.ecoleMenu a:hover {
-    color: #F57C00;
-}
-
-/* Menu Mobile / Tablette */
+/* ===== MOBILE ===== */
 
 .mobileActions {
-    display: none;
-    align-items: center;
-    margin-left: auto;
-}
-
-.overlay {
-    position: fixed;
-    top: 100px;            
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(0, 0, 0, 0.6);
-    z-index: 998;
+  display: none;
+  margin-left: auto;
 }
 
 .clubNameFull,
 .clubNameShort {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    color: white;
-    font-weight: 600;
-    letter-spacing: 0.08rem;
-    text-transform: uppercase;
-    white-space: nowrap;
-    display: none;
-    pointer-events: none; 
-}
-
-.iconsContainer {
-    display: flex;
-    align-items: center;
-    gap: 1.5rem;
-}
-
-.homeIcon {
-    display: flex;
-    align-items: center;
-}
-
-.homeMask {
-    width: 41px;
-    height: 41px;
-    background-color: #FE6806;
-    mask-image: url("/icons/home.svg");
-    -webkit-mask-image: url("/icons/home.svg");
-    mask-repeat: no-repeat;
-    -webkit-mask-repeat: no-repeat;
-    mask-size: contain;
-    -webkit-mask-size: contain;
-    mask-position: center;
-    -webkit-mask-position: center;
+  color: white;
+  font-weight: 600;
+  letter-spacing: 0.08rem;
+  text-transform: uppercase;
+  display: none;
 }
 
 .burger {
-    display: none;
-    font-size: 2.5rem;
-    background: none;
-    border: none;
-    color: #FE6806;
-    cursor: pointer;
-}
-
-/* Menu Responsive */
-
-.mobileMenu {
-    background: black;
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    z-index: 999;
-}
-
-.mobileMenu a {
-    padding: 1.5rem;
-    font-size: 1.6rem;
-    text-transform: uppercase;
-    text-decoration: none;
-    color: white;
-}
-
-.mobileItem {
-  width: 100%;
-}
-
-.mobileLink {
-  padding: 1.5rem;
-  font-size: 1.9rem;
-  text-transform: uppercase;
-  color: white;
-  text-align: center;     
-  cursor: pointer;
-}
-
-.mobileLink:hover {
+  display: none;
+  font-size: 2.8rem;
+  background: none;
+  border: none;
   color: #FE6806;
 }
 
-
-
-.mobileSubMenu {
-    display: flex;
-    flex-direction: column;
-    background: rgb(45, 45, 45);
+.overlay {
+  position: fixed;
+  top: 100px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 998;
 }
 
-.mobileMenu .mobileSubMenu a {
-  padding: 1.2rem;
-  font-size: 1.5rem;       
-  letter-spacing: 0.1rem;
-  text-transform: uppercase;
-  text-decoration: none;
-  color: white;
+.mobileMenu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  background: black;
+  z-index: 999;
+  display: flex;
+  flex-direction: column;
   text-align: center;
 }
 
-
-/* Laptop / Tablette */
-
-@media (max-width: 1200px) {
-    .linkSection {
-        display: none;
-    }
-
-    .mobileActions {
-        display: flex;
-    }
-
-    .clubNameFull {
-        display: inline;
-        font-size: 2rem;
-    }
-
-    .burger {
-        display: block;
-    }
-
-    .mobileMenu {
-        position: absolute;
-        top: 100%;
-        left: 0;
-        width: 100%;
-        background: black;
-        z-index: 999;
-    }
+.mobileMenu a,
+.mobileLink {
+  padding: 1.5rem;
+  font-size: 1.8rem;
+  color: white;
+  text-transform: uppercase;
+  text-decoration: none;
+  cursor: pointer;
 }
 
-/* Tablette Verticale */
+/* FULLSCREEN SUBMENU */
+.mobileSubMenuFull {
+  position: fixed;
+  top: 100px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: black;
+  z-index: 1001;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.mobileSubMenuFull a {
+  min-width: 450px;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: white;
+  padding: 1.8rem;
+  margin: 1rem;
+  font-size: 1.8rem;
+  border: 1.5px solid #FE6806;
+  border-radius: 7.5px;
+  text-align: center;
+}
+
+.mobileBack {
+  position: absolute;
+  top: 1.5rem;
+  left: 1.5rem;
+  font-size: 1.6rem;
+  color: white;
+  cursor: pointer;
+}
+
+/* GRID MOBILE */
+@media (max-width: 1200px) {
+  .container {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+  }
+
+  .linkSection {
+    display: none;
+  }
+
+  .mobileActions {
+    display: flex;
+    justify-self: end;
+  }
+
+  .clubNameFull {
+    display: inline;
+    justify-self: center;
+    font-size: 2rem;
+  }
+
+  .burger {
+    display: block;
+  }
+
+  .dropdownMenu {
+    display: none;
+  }
+}
 
 @media (max-width: 768px) {
-    .clubNameFull {
-        font-size: 1.5rem;
-    }
-
-    .mobileMenu {
-        position: fixed;
-        top: 100px;        
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background: black;
-        z-index: 999;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-    }
-
-    .mobileMenu a {
-        font-size: 2rem;
-    }
+  .clubNameFull {
+    font-size: 1.5rem;
+  }
 }
 
-/* Mobile */
-
 @media (max-width: 480px) {
-    .clubNameFull {
-        display: none;
-    }
+  .clubNameFull {
+    display: none;
+  }
 
-    .clubNameShort {
-        display: inline;
-        font-size: 2rem;
-    }
+  .clubNameShort {
+    display: inline;
+    font-size: 1.4rem;
+    justify-self: center;
+  }
+
+  .mobileSubMenuFull a {
+    min-width: 300px;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: white;
+    padding: 1.8rem;
+    margin: 1rem;
+    font-size: 1.3rem;
+    border: 1.5px solid #FE6806;
+    border-radius: 7.5px;
+    text-align: center;
+  }
+
+  .mobileBack {
+    font-size: 1.2rem;
+  }
 }

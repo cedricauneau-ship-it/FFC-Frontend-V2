@@ -9,6 +9,7 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 :root {
@@ -18,6 +19,7 @@ html {
 body {
   display: flex;
   flex-direction: column;
+  overflow-x: hidden;
 }
 
 h1 {
