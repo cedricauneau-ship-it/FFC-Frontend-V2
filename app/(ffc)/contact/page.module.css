@@ -27,7 +27,6 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 1.2rem;
 }
 
 /* Icône */
@@ -41,6 +40,7 @@
 
   background: rgba(255, 255, 255, 0.08);
   border: 1px solid rgba(255, 255, 255, 0.12);
+  margin-bottom: 1.5rem;
 }
 
 .image {
@@ -63,6 +63,21 @@
   height: 380px;
   border-radius: 12px;
   border: 0;
+}
+
+.endContact {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.endContact p {
+  color: white;
+  text-align: center;
+}
+
+.endContact a {
+  max-width: 250px;
 }
 
 /* ===== RESPONSIVE ===== */

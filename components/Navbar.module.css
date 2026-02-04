@@ -107,6 +107,7 @@
   .dropdownMenu a:hover {
     background-color: #FE6806;
     color: black;
+    border-radius: 12px;
   }
 }
 
