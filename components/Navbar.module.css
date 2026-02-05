@@ -155,6 +155,9 @@
   display: flex;
   flex-direction: column;
   text-align: center;
+  max-height: calc(100vh - 100px);
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
 }
 
 .mobileMenu a,
@@ -170,6 +173,8 @@
 /* FULLSCREEN SUBMENU */
 .mobileSubMenuFull {
   position: fixed;
+  overflow-y: auto;          /* ✅ scroll vertical autorisé */
+  -webkit-overflow-scrolling: touch;
   top: 100px;
   left: 0;
   right: 0;

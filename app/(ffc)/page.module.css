@@ -20,6 +20,39 @@
     opacity: 1;
 }
 
+/* Actu */
+.actuContainer {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.imageWrapper {
+    width: 45%;
+    aspect-ratio: 1 / 1;
+    border-radius: 12px;
+    overflow: hidden;
+    position: relative;
+    border: 1.5px solid black;
+}
+
+.actuImage {
+    object-fit: cover;
+}
+
+.actuText {
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+    color: white;
+    justify-content: center;
+    text-align: center;
+    gap: 2rem;
+}
+
+.actuText span {
+    color: #F57C00;
+}
+
 /* Match */
 .gridMatch {
     display: grid;
@@ -34,21 +67,6 @@
     border-radius: 12px;
     overflow: hidden;
     min-height: 360px;
-}
-
-/* Actualité */
-.actu1 {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 2rem;
-    text-align: center;
-    color: white;
-}
-
-.actu1Text p {
-    font-size: 1.6rem;
-    letter-spacing: 1rem;
 }
 
 /* Club */
@@ -126,5 +144,20 @@
     .gridMatch {
         grid-template-columns: 1fr;
         padding: 1.2rem;
+    }
+    
+    .actuContainer {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .imageWrapper {
+        width: 90%;
+    }
+    
+    .actuText {
+        width: 100%;
+        margin-top: 2rem;
     }
 }

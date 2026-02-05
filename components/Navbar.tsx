@@ -38,6 +38,7 @@ export default function Navbar() {
           <span className={`${Style.navLink} ${Style.hasSubmenu}`}>club</span>
           <div className={Style.dropdownMenu}>
             <Link href="/club/benevoles">les bénévoles</Link>
+            <Link href="/club/licence">la licence</Link>
             <Link href="/club/entrainements">entraînements</Link>
             <Link href="/club/terrains">les terrains</Link>
           </div>
@@ -120,6 +121,7 @@ export default function Navbar() {
                 ← retour
               </div>
               <Link href="/club/benevoles" onClick={handleNavClick("/club/benevoles")}>les bénévoles</Link>
+              <Link href="/club/licence" onClick={handleNavClick("/club/licence")}>la licence</Link>
               <Link href="/club/entrainements" onClick={handleNavClick("/club/entrainements")}>entraînements</Link>
               <Link href="/club/terrains" onClick={handleNavClick("/club/terrains")}>les terrains</Link>
             </div>

@@ -53,7 +53,35 @@ export default function HomePage() {
 
       </section>
 
-      {/* Actualité */}
+      <section>
+
+        <div className="sectionDiviser"></div>
+        <h1>Actualité</h1>
+
+        <div className="sectionContainer">
+          <div className="sectionCadreContainer">
+            <div className={styles.actuContainer}>
+              <div className={styles.imageWrapper}>
+                <Image
+                  src="/images/actu/loto.jpg"
+                  alt="Affiche du loto de Fontenay-en-parisis"
+                  fill
+                  sizes="(max-width: 768px) 100vw, 250px"
+                  className={styles.actuImage}
+                />
+              </div>
+              <div className={styles.actuText}>
+                <h2>On vous donne rendez-vous <span>le 28 mars</span>.</h2>
+                <h2>De nombreux lots à gagner !</h2>
+              </div>
+            </div>
+          </div>    
+        </div>
+
+      </section>
+
+      <div className="diviser"></div>
+
       <section>
 
         <div className="sectionDiviser"></div>
@@ -72,9 +100,8 @@ export default function HomePage() {
 
       </section>
 
-            <div className="diviser"></div>
+      <div className="diviser"></div>
 
-      {/* Match */}
       <section>
 
         <div className="sectionDiviser"></div>
@@ -101,7 +128,6 @@ export default function HomePage() {
 
       <div className="diviser"></div>
       
-      {/* Club */}
       <section>
 
         <div className="sectionDiviser"></div>
