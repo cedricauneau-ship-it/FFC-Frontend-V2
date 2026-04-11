@@ -61,19 +61,7 @@ export default function HomePage() {
         <div className="sectionContainer">
           <div className="sectionCadreContainer">
             <div className={styles.actuContainer}>
-              <div className={styles.imageWrapper}>
-                <Image
-                  src="/images/actu/loto.jpg"
-                  alt="Affiche du loto de Fontenay-en-parisis"
-                  fill
-                  sizes="(max-width: 768px) 100vw, 250px"
-                  className={styles.actuImage}
-                />
-              </div>
-              <div className={styles.actuText}>
-                <h2>On vous donne rendez-vous <span>le 28 mars</span>.</h2>
-                <h2>De nombreux lots à gagner !</h2>
-              </div>
+
             </div>
           </div>    
         </div>
