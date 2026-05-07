@@ -52,7 +52,7 @@ export default function Footer() {
       </div>
       <div className={Style.footerDivider}></div>
       <div className={Style.footerEndText}>
-        <p>© Copyright {new Date().getFullYear()} - Créer par <a href='https://portfolio-psi-orpin-j4uynkghk2.vercel.app' target='_blank' rel='noopener noreferrer' aria-label='Mon Portfolio'>Cédric Auneau</a></p>
+        <p>© Copyright {new Date().getFullYear()} - Créé par <a href='https://portfolio-psi-orpin-j4uynkghk2.vercel.app' target='_blank' rel='noopener noreferrer' aria-label='Portfolio de Cédric Auneau'>Cédric Auneau</a></p>
       </div>
     </footer>
   );

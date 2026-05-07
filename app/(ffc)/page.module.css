@@ -1,56 +1,51 @@
-/* Hero */
-.hero {
-    position: relative;
-    height: calc(85vh - var(--navbar-height));
-    min-height: 520px;
-    overflow: hidden;
-    color: #f5f5f5;
-    border-bottom: 50px solid #101010;
-}
-
-/* Slides */
-.slide {
-    position: absolute;
-    inset: 0;
-    opacity: 0;
-    transition: opacity 2.5s ease-in-out;
-}
-
-.active {
-    opacity: 1;
-}
-
-/* Actu */
-.actuContainer {
-    display: flex;
-    justify-content: space-evenly;
-}
-
-.imageWrapper {
-    width: 45%;
-    aspect-ratio: 1 / 1;
-    border-radius: 12px;
-    overflow: hidden;
-    position: relative;
-    border: 1.5px solid black;
-}
-
-.actuImage {
-    object-fit: cover;
-}
-
-.actuText {
+/* À propos */
+.aboutText {
+    color: white;
     display: flex;
     flex-direction: column;
-    width: 40%;
-    color: white;
-    justify-content: center;
-    text-align: center;
-    gap: 2rem;
+    gap: 1rem;
 }
 
-.actuText span {
-    color: #F57C00;
+.aboutText strong {
+    color: #f57c00;
+}
+
+.inlineLink {
+    color: #f57c00;
+    text-decoration: underline;
+    font-weight: 600;
+}
+
+.inlineLink:hover {
+    color: white;
+}
+
+/* Catégories */
+.categoriesGrid {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.75rem 2rem;
+    color: white;
+    margin: 0 0 1.5rem 0;
+    padding: 0;
+}
+
+.categoriesGrid li {
+    padding: 0.6rem 0.75rem;
+    border-left: 3px solid #f57c00;
+    background-color: rgba(255, 255, 255, 0.04);
+    border-radius: 0 6px 6px 0;
+}
+
+.categoriesGrid strong {
+    color: #f57c00;
+    margin-right: 0.5rem;
+}
+
+.categoriesCta {
+    text-align: center;
+    margin-top: 2.5rem;
 }
 
 /* Match */
@@ -76,8 +71,10 @@
     color: white;
 }
 
-.clubContainer h2 {
+.clubContainer h3 {
     color: #F57C00;
+    text-transform: uppercase;
+    font-size: clamp(1.3rem, 3vw, 1.8rem);
 }
 
 .joueurText {
@@ -102,6 +99,48 @@
     padding: 0 0.5rem;
 }
 
+/* FAQ */
+.faqList {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.faqItem {
+    background-color: rgba(255, 255, 255, 0.04);
+    border-left: 3px solid #f57c00;
+    border-radius: 0 8px 8px 0;
+    color: white;
+    padding: 0.85rem 1rem;
+}
+
+.faqItem summary {
+    cursor: pointer;
+    font-weight: 600;
+    list-style: none;
+    color: #f57c00;
+}
+
+.faqItem summary::-webkit-details-marker {
+    display: none;
+}
+
+.faqItem summary::before {
+    content: "+";
+    display: inline-block;
+    margin-right: 0.6rem;
+    font-weight: bold;
+}
+
+.faqItem[open] summary::before {
+    content: "−";
+}
+
+.faqItem p {
+    margin-top: 0.6rem;
+    line-height: 1.6;
+}
+
 /* Résponsive */
 @media (max-width: 1024px) {
     .gridMatch {
@@ -110,17 +149,8 @@
 }
 
 @media (max-width: 768px) {
-    .hero {
-        min-height: 380px;
-    }
-
-    .actu1 {
-        flex-direction: column;
-    }
-
-    .actu1 img {
-        width: 100%;
-        height: auto;
+    .categoriesGrid {
+        grid-template-columns: 1fr;
     }
 
     .clubContainer {
@@ -144,20 +174,5 @@
     .gridMatch {
         grid-template-columns: 1fr;
         padding: 1.2rem;
-    }
-    
-    .actuContainer {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .imageWrapper {
-        width: 90%;
-    }
-    
-    .actuText {
-        width: 100%;
-        margin-top: 2rem;
     }
 }

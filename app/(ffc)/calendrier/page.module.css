@@ -1,38 +1,24 @@
-/* ===== WRAPPER ===== */
-.Wrapper {
-  position: relative;
-  width: 100%;
-  background: #1e1e1e;
+.intro {
+  color: white;
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
 }
 
-/* Par défaut : iframe NON interactive */
-.Wrapper iframe {
-  pointer-events: none;
+.intro strong {
+  color: #f57c00;
 }
 
-/* Après clic : iframe interactive */
-.active iframe {
-  pointer-events: auto;
+.link {
+  color: #f57c00;
+  text-decoration: underline;
 }
 
-/* ===== IFRAME ===== */
-.calendrier {
-  width: 100%;
-  min-height: 1000px;
-  border: 0;
-  border-radius: 12px;
+.link:hover {
+  color: white;
 }
 
-/* ===== TABLETTE ===== */
-@media (max-width: 1024px) {
-  .calendrier {
-    min-height: 975px;
-  }
-}
-
-/* ===== MOBILE : COMPORTEMENT IDENTIQUE À AVANT ===== */
+/* ===== MOBILE : pleine largeur ===== */
 @media (max-width: 640px) {
-  /* On enlève le cadre visuel */
   :global(.sectionCadreContainer) {
     padding: 0;
     border: none;
@@ -40,15 +26,8 @@
     box-shadow: none;
   }
 
-  /* Padding écran minimal */
   :global(.sectionContainer) {
     padding-left: 0.5rem;
     padding-right: 0.5rem;
-  }
-
-  /* Widget en pleine largeur */
-  .calendrier {
-    min-height: 1025px;
-    border-radius: 0;
   }
 }

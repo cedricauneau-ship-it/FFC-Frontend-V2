@@ -49,7 +49,8 @@
 }
 
 /* Texte sous icône */
-.infoCard h3 {
+.infoCard h3,
+.infoCard a {
   font-size: clamp(1.15rem, 1.8vw, 1.4rem);
   font-weight: 700;
   color: white;

@@ -60,6 +60,28 @@
   margin-top: 1rem;
 }
 
+/* Citations */
+.valueCard blockquote {
+  font-style: italic;
+  border-left: 3px solid #f57c00;
+  padding-left: 1.2rem;
+  margin: 0.5rem 0;
+  text-align: left;
+  max-width: 680px;
+}
+
+.valueCard blockquote p {
+  font-style: italic;
+  margin-bottom: 0.2rem;
+}
+
+.signature {
+  margin-top: 1.2rem;
+  color: #f57c00;
+  font-weight: 600;
+  font-style: italic;
+}
+
 /* ===== RESPONSIVE ===== */
 
 /* Tablette */

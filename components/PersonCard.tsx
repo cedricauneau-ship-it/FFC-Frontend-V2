@@ -1,5 +1,3 @@
-"use client";
-
 import Image from "next/image";
 import styles from "./PersonCard.module.css";
 
@@ -16,7 +14,7 @@ export default function PersonCard({
     name,
     tel,
 }: PersonCardProps) {
-    
+
   const hasImage = Boolean(img && img.length > 0);
 
   return (
@@ -32,10 +30,10 @@ export default function PersonCard({
                 />
             ) : (
                 <div className={styles.placeholder}>
-                <span className={styles.icon}>👤</span>
+                <span className={styles.icon}>{"\u{1F464}"}</span>
                 </div>
             )}
-        </div>    
+        </div>
 
         <div className={styles.text}>
             <h2>{role}</h2>

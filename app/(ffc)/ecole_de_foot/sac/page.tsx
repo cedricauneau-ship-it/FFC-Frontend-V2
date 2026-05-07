@@ -1,8 +1,28 @@
+import type { Metadata } from "next";
+import { jsonLd, breadcrumb } from "@/lib/seo";
 import styles from "./page.module.css";
+
+export const metadata: Metadata = {
+  title: "Le sac de football — Équipement obligatoire",
+  description:
+    "Liste complète de l'équipement à apporter pour l'entraînement et les matchs au Fontenay-en-Parisis FC : chaussures, tenue, protège-tibias, hygiène, organisation.",
+  alternates: { canonical: "/ecole_de_foot/sac" },
+};
+
+const breadcrumbJsonLd = breadcrumb([
+  { name: "Accueil", path: "/" },
+  { name: "École de foot", path: "/ecole_de_foot/sac" },
+  { name: "Le sac de football", path: "/ecole_de_foot/sac" },
+]);
 
 export default function SacPage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: jsonLd(breadcrumbJsonLd) }}
+      />
+
       <section id="sac">
         <div className="sectionDiviser"></div>
         <h1>Le sac de football</h1>
@@ -10,10 +30,10 @@ export default function SacPage() {
         <div className="sectionContainer">
           <div className="sectionCadreContainer">
 
-            <h3 className={styles.subTitle}>
+            <h2 className={styles.subTitle}>
               Le joueur doit arriver <span>en survêtement du club</span>, avec un
               sac de football qui <span>doit contenir</span> :
-            </h3>
+            </h2>
 
             <div className={styles.table}>
               <div className={styles.row}>
@@ -34,7 +54,7 @@ export default function SacPage() {
                 <span>Tenue</span>
                 <div className={styles.text}>
                   <p>Chaussettes noires et short noir du club.</p>
-                  <p>Pour les jours d’entraînement : tenue libre.</p>
+                  <p>Pour les jours d&apos;entraînement : tenue libre.</p>
                 </div>
               </div>
 
