@@ -27,7 +27,7 @@ Conçu, développé et déployé en solo (bénévolat) — du cadrage des besoin
 - Présentation du club, de l'école de foot et de la vie associative
 - Formulaire de contact
 - **SEO local optimisé** — Search Console, sitemap XML, Open Graph, balises meta
-- Déploiement continu via Vercel, domaine personnalisé géré via Cloudflare
+- Déploiement continu via Vercel, domaine personnalisé géré via Infomaniak
 - Structure pensée pour une **maintenance simplifiée** par les responsables du club
 
 ---
@@ -50,7 +50,7 @@ npm run build
 ## Déploiement
 
 Le site est déployé automatiquement sur **Vercel** à chaque push sur `main`.  
-Le domaine `fontenayenparisisfootballclub.fr` est géré via **Cloudflare**.
+Le domaine `fontenayenparisisfootballclub.fr` est géré via **Infomaniak**.
 
 ---
 
